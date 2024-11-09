@@ -1,6 +1,8 @@
 // routes/main.js
 const express = require('express');
 const router = express.Router();
+const questions = require('../data/questions');
+
 
 const data = { quizName: "Educational Quiz App" };
 
@@ -9,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/quiz', (req, res) => {
-  res.render('quiz', data);
+  res.render('quiz', { quizName: "Educational Quiz App", questions });
 });
 
 router.get('/register', (req, res) => {
