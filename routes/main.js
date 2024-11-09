@@ -14,6 +14,18 @@ router.get('/quiz', (req, res) => {
   res.render('quiz', { quizName: "Educational Quiz App", questions });
 });
 
+router.post('/quiz/submit', (req, res) => {
+  const userAnswers = req.body.answers;
+  let score = 0;
+  questions.forEach((question, index) => {
+      if (parseInt(userAnswers[index]) === question.answer) {
+          score++;
+      }
+  });
+
+  res.render('score', { score, total: questions.length });
+});
+
 router.get('/register', (req, res) => {
   res.render('register', { shopName: "Educational Quiz App" });
 });
