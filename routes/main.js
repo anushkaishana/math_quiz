@@ -11,19 +11,50 @@ router.get('/', (req, res) => {
 });
 
 router.get('/quiz', (req, res) => {
-  res.render('quiz', { quizName: "Educational Quiz App", questions });
+  
+  const quizName = "Educational math quiz";
+
+  //querying databse to fetch questions
+  const query = "SELECT * FROM questions";
+  
+  db.query(query, (err, data) => {
+    if (err) {
+      console.error("Database fetch error:", err);
+      res.status(500).send("Unable to load quiz questions.");
+    } else {
+      const questions = data.map((row) => ({
+        //displaying the question
+        question: row.question, 
+        //parsing options stored as json in the database
+        options: JSON.parse(row.options), 
+      }));
+      res.render('quiz', { quizName, questions });
+    }
+  });
 });
 
 router.post('/quiz/submit', (req, res) => {
+  //answers by the user
   const userAnswers = req.body.answers;
+  //initializing the score counter
   let score = 0;
-  questions.forEach((question, index) => {
-      if (parseInt(userAnswers[index]) === question.answer) {
-          score++;
-      }
-  });
 
-  res.render('score', { score, total: questions.length });
+  //querying databse to fetch appropriate answers
+  const sql = "SELECT id, answer FROM questions";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Error calculating score.");
+    } else {
+      results.forEach((question, index) => {
+        if (parseInt(userAnswers[index]) === question.answer) {
+          score++;
+        }
+      });
+
+      res.render('score', { score, total: results.length });
+    }
+  });
 });
 
 router.get('/register', (req, res) => {
