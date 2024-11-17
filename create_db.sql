@@ -5,6 +5,8 @@ USE quiz_app;
 CREATE TABLE IF NOT EXISTS questions (
     -- auto incrementing unique id
     id INT AUTO_INCREMENT PRIMARY KEY, 
+    -- quiz id, based on quiz type
+    quiz_id INT NOT NULL,
     question TEXT NOT NULL,            
     options JSON NOT NULL,             
     answer INT NOT NULL               
