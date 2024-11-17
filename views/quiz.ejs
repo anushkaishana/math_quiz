@@ -9,22 +9,20 @@
     <p>Please answer the questions below to the best of your knowledge.</p>
     
     <form action="/quiz/submit" method="POST">
-        <% for (let index = 0; index < questions.length; index++) { %>
-            <div class="question-block">
-                
-                <p><%= index + 1 %>. <%= questions[index].question %></p>
-
-                <!--options for each index-->
-                <% for (let i = 0; i < questions[index].options.length; i++) { %>
+        <!-- Passing the quiz_id to the server-->
+        <input type="hidden" name="quizId" value="<%= quizId %>">
+    
+        <% questions.forEach((q, index) => { %>
+            <div>
+                <p><%= index + 1 %>. <%= q.question %></p>
+                <% q.options.forEach((option, i) => { %>
                     <label>
                         <input type="radio" name="answers[<%= index %>]" value="<%= i %>" required>
-                        <%= questions[index].options[i] %>
-                    </label>
-                <% } %>
+                        <%= option %>
+                    </label><br>
+                <% }); %>
             </div>
-            <br>
-        <% } %>
-        
+        <% }); %>
         <button type="submit">Submit</button>
     </form>
 
