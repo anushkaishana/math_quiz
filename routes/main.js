@@ -11,7 +11,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/quiz-list', (req, res) => {
-  res.render('quiz_list'); 
+  if (!req.session.progress) {
+      //Default set to level 1
+      req.session.progress = { level: 1 }; 
+  }
+
+  res.render('quiz_list', { progress: req.session.progress });
 });
 
 router.get('/quiz', (req, res) => {
@@ -47,7 +52,7 @@ router.get('/quiz', (req, res) => {
 router.post('/quiz/submit', (req, res) => {
   //answers by the user
   const userAnswers = req.body.answers;
-  const quizId = req.body.quizId;       
+  const quizId = parseInt(req.body.quizId);       
   //initializing the score counter
   let score = 0;
 
@@ -62,13 +67,27 @@ router.post('/quiz/submit', (req, res) => {
 
   const totalQuestions = results.length;
 
-    //comparing user answers to correct answers
+      // Calculate the user's score
       results.forEach((question, index) => {
           if (parseInt(userAnswers[index]) === question.answer) {
               score++;
           }
       });
 
+      const percentage = (score / totalQuestions) * 100;
+
+      //if the user scores 80% or higher then prgoress i supdated and next level can be unlocked
+      if (percentage >= 80) {
+        if (!req.session.progress) {
+            req.session.progress = { level: 1 };
+        }
+        if (quizId >= req.session.progress.level) {
+            //iterate to unlock next level
+            req.session.progress.level = quizId + 1; 
+        }
+      }
+
+      // Render the score page
       res.render('score', { score, total: totalQuestions });
   });
 });

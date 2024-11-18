@@ -6,13 +6,32 @@
     <title>Choose a Quiz</title>
 </head>
 <body>
-    <h1>Choose a Math Quiz</h1>
     <ul>
-        <!-- List of quizzes -->
-        <li><a href="/quiz?quizId=1">Addition </a></li>
-        <li><a href="/quiz?quizId=2">Subtraction</a></li>
-        <li><a href="/quiz?quizId=3">Multiplication </a></li>
-        <li><a href="/quiz?quizId=4">Division </a></li>
+        <% if (progress.level >= 1) { %>
+            <li><a href="/quiz?quizId=1">Addition Quiz</a></li>
+        <% } else { %>
+            <li>🔒 Addition Quiz (Locked)</li>
+        <% } %>
+
+        <% if (progress.level >= 2) { %>
+            <li><a href="/quiz?quizId=2">Subtraction Quiz</a></li>
+        <% } else { %>
+            <li>🔒 Subtraction Quiz (Locked)</li>
+        <% } %>
+
+        <% if (progress.level >= 3) { %>
+            <li><a href="/quiz?quizId=3">Multiplication Quiz</a></li>
+        <% } else { %>
+            <li>🔒 Multiplication Quiz (Locked)</li>
+        <% } %>
+
+        <% if (progress.level >= 4) { %>
+            <li><a href="/quiz?quizId=4">Division Quiz</a></li>
+        <% } else { %>
+            <li>🔒 Division Quiz (Locked)</li>
+        <% } %>
     </ul>
 </body>
 </html>
+
+<!-- lock emoji: https://gist.github.com/rxaviers/7360908 -->
