@@ -98,8 +98,43 @@ router.get('/register', (req, res) => {
 
 
 router.post('/registered', (req, res) => {
-  const { first, last, email } = req.body;
-  res.send(`Hello ${first} ${last}, you are now registered! Confirmation sent to ${email}.`);
+  const { first, last, email, password } = req.body;
+  
+  //checking for duplicate email entries- 1 email 1 account
+  const emailQuery = "SELECT * FROM users WHERE email = ?";
+  db.query(emailQuery, [email], (err, result) => {
+    if (err) {
+      console.error("Database error:", err);
+      return res.status(500).send("An error occurred while checking email.");
+    }
+
+    //says email already registered if match is identified
+    if (result.length > 0) {
+      return res.status(400).send("Email is already registered.");
+    }
+  
+  const query = "INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
+  db.query(query, [first, last, email, password], (err, result) => {
+    if (err) {
+      console.error("Database error:", err);
+      res.status(500).send("An error occurred.");
+      return;
+    }
+
+    //all users progress with level 1
+    const progressQuery = "INSERT INTO user_progress (user_id, level) VALUES (?, ?)";
+    db.query(progressQuery, [result.insertId, 1], (err) => {
+      if (err) {
+        console.error("Progress initialization error:", err);
+        res.status(500).send("Error initializing progress.");
+        return;
+      }  
+      
+      res.send(`Hello ${first} ${last}, your account has been created!`);
+
+      });
+    });   
+  });
 });
 
 router.get('/login', (req, res) => {
