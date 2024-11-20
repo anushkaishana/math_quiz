@@ -102,4 +102,8 @@ router.post('/registered', (req, res) => {
   res.send(`Hello ${first} ${last}, you are now registered! Confirmation sent to ${email}.`);
 });
 
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
 module.exports = router;
