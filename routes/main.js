@@ -141,4 +141,27 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const query = "SELECT * FROM users WHERE email = ? AND password = ?";
+  db.query(query, [email, password], (err, results) => {
+    if (err) {
+      console.error("Database query error:", err);
+      res.status(500).send("An error occurred.");
+      return;
+    }
+
+    if (results.length === 0) {
+      res.status(401).send("Invalid email or password.");
+      return;
+    }
+
+    req.session.userId = results[0].id;
+    req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
+    
+    res.redirect('/quiz-list');
+  });
+});
+
 module.exports = router;
