@@ -11,12 +11,20 @@ router.get('/', (req, res) => {
 });
 
 router.get('/quiz-list', (req, res) => {
-  if (!req.session.progress) {
-      //Default set to level 1
-      req.session.progress = { level: 1 }; 
-  }
+  const query = "SELECT level FROM user_progress WHERE user_id = ?";
+  db.query(query, [req.session.userId], (err, results) => {
+    if (err) {
+      console.error("Error fetching quiz progress", err);
+      return res.status(500).send("Unable to load quiz progress");
+    }
 
-  res.render('quiz_list', { progress: req.session.progress });
+    //default progress level is 1
+    const progress = results[0]?.level || 1;
+
+    //saving progress to the session and render the quiz list
+    req.session.progress = { level: progress };
+    res.render('quiz_list', { progress: req.session.progress });
+  });
 });
 
 router.get('/quiz', (req, res) => {
@@ -78,17 +86,37 @@ router.post('/quiz/submit', (req, res) => {
 
       //if the user scores 80% or higher then prgoress i supdated and next level can be unlocked
       if (percentage >= 80) {
-        if (!req.session.progress) {
-            req.session.progress = { level: 1 };
-        }
-        if (quizId >= req.session.progress.level) {
-            //iterate to unlock next level
-            req.session.progress.level = quizId + 1; 
-        }
-      }
-
-      // Render the score page
-      res.render('score', { score, total: totalQuestions });
+        //query to get current progress level
+        const progressQuery = "SELECT level FROM user_progress WHERE user_id = ?";
+        db.query(progressQuery, [req.session.userId], (err, progressResults) => {
+          if (err) {
+            console.error("Error fetching progress:", err);
+            return res.status(500).send("Error updating progress.");
+          }
+      
+          //default set to 1 if no progress is found
+          const currentLevel = progressResults[0]?.level || 1;
+      
+          //progress updated only if it matches/exceeds current level
+          if (quizId >= currentLevel) {
+            const updateQuery = "UPDATE user_progress SET level = ? WHERE user_id = ?";
+            db.query(updateQuery, [quizId + 1, req.session.userId], (err) => {
+              if (err) {
+                console.error("Error updating progress:", err);
+                return res.status(500).send("Error updating progress.");
+              }
+              //render score after updating progress
+              return res.render('score', { score, total: totalQuestions });
+            });
+          } else {
+            //score rendered if level doesn't change
+            return res.render('score', { score, total: totalQuestions });
+          }
+        });
+      } else {
+        //render score for when user scores less than 80%
+        res.render('score', { score, total: totalQuestions });
+      }  
   });
 });
 
