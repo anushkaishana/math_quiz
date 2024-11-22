@@ -204,6 +204,34 @@ router.get('/logout', (req, res) => {
   });
 });
 
+router.get('/profile', (req, res) => {
+    const userQuery = "SELECT first_name, last_name, email FROM users WHERE id = ?";
+    const progressQuery = "SELECT level FROM user_progress WHERE user_id = ?";
+
+    db.query(userQuery, [req.session.userId], (err, userResults) => {
+
+      if (userResults.length === 0) {
+        //for if user cannot be found
+        res.status(404).send("User not found.");
+        return;
+      }
+  
+      const user = userResults[0];
+  
+      //exctracting user data
+      db.query(progressQuery, [req.session.userId], (err, progressResults) => {
+        const progress = progressResults.length > 0 ? progressResults[0].level : 1;
+
+        //rendering profile page with user and progress info
+        res.render('profile', {
+        userName: `${user.first_name} ${user.last_name}`,
+        level: progress,
+        email: user.email,
+      });
+    });
+  });
+});
+
 module.exports = router;
 
 //references:
