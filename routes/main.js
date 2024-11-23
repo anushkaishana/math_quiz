@@ -10,6 +10,11 @@ router.get('/', (req, res) => {
   res.render('index', data);
 });
 
+router.get('/about', (req, res) => {
+  res.render('about', { quizName: "Educational Quiz App" }); // Pass `quizName` dynamically
+});
+
+
 router.get('/quiz-list', (req, res) => {
   const query = "SELECT level FROM user_progress WHERE user_id = ?";
   db.query(query, [req.session.userId], (err, results) => {
