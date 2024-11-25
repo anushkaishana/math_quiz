@@ -1,14 +1,15 @@
 // routes/main.js
 const express = require('express');
 const router = express.Router();
-const questions = require('../data/questions');
-
 
 const data = { quizName: "Educational Quiz App" };
 
 router.get('/', (req, res) => {
-  res.render('index', data);
+  //checking whether user is logged in or not
+  const isLoggedIn = req.session.userId ? true : false; 
+  res.render('index', { quizName: data.quizName, isLoggedIn });
 });
+
 
 router.get('/about', (req, res) => {
   res.render('about', { quizName: "Educational Quiz App" }); // Pass `quizName` dynamically
@@ -126,8 +127,10 @@ router.post('/quiz/submit', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-  res.render('register', { shopName: "Educational Quiz App" });
+  const isLoggedIn = req.session.userId ? true : false;
+  res.render('register', { shopName: "Educational Quiz App", isLoggedIn });
 });
+
 
 
 router.post('/registered', (req, res) => {
@@ -163,7 +166,7 @@ router.post('/registered', (req, res) => {
         return;
       }  
       
-      res.send(`Hello ${first} ${last}, your account has been created!`);
+      res.render('registered', { first, last });
 
       });
     });   

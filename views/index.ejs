@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title><%= quizName %></title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Welcome to <%= quizName %>!</h1>
-    
-    <a href="/about">Who and what are we?</a>
+    <div class="container">
+        <header>
+            <h1>Welcome to <%= quizName %>!</h1>
+            <a href="/about" class="about-link">Who and what are we?</a>
+        </header>
+        
+        <section class="intro">
+            <p>Get ready to test your knowledge with our quiz!</p>
+            <h2>Remember to do your best, and don't worry, you're only going to get better</h2>
+        </section>
 
-    <p>Get ready to test your knowledge with our quiz!</p>
-    <h2>Remember to do your best, and don't worry, you're only going to get better</h2>
+        <section class="actions">
+            <a href="/register">
+                <button>Create new account</button>
+            </a>
 
-    <a href="/register">
-        <button>Create new account</button>
-    </a>
+            <% if (!isLoggedIn) { %>
+                <a href="/login"><button>Sign in & Get Started</button></a>
+            <% } else { %>
+                <button disabled>Sign in & Get Started</button>
+            <% } %>
+        </section>
 
-    <a href="/login">
-        <button>Sign in & Get Started</button>
-    </a>
-
+        <% if (isLoggedIn) { %>
+            <section class="quiz-link">
+                <a href="/quiz-list">Head back to quizzes</a>
+            </section>
+        <% } %>
+    </div>
 </body>
 </html>

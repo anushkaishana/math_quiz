@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><%= shopName %> - Account</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Create Account</h1>
@@ -15,9 +16,11 @@
     </form>
 
     <h2>OR</h2>
-    <a href="/login">
-        <button>Sign in to your account</button>
-    </a>
+    <% if (!isLoggedIn) { %>
+        <a href="/login"><button>Sign in to your account</button></a>
+    <% } else { %>
+        <button disabled>Sign in to your account</button>
+    <% } %>
 
 </body>
 </html>

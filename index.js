@@ -17,6 +17,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
+//to handle static files like css
+app.use(express.static('public')); 
+
+
 //databse sql connection
 const db = mysql.createConnection({
     host: 'localhost',
