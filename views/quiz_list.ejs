@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/style.css">
-    <header>
-        <a href="/profile">View your profile!</a>
-        <a href="/">Back to home</a>
-    </header>
-    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Choose a Quiz</title>
 </head>
-<body>
-    <ul>
+<body class="quiz-list-page">
+    <div class="quiz-list-header">
+        <a href="/profile">View your profile!</a>
+        <a href="/">Back to home</a>
+    </div>
+    
+    <h1>Choose a Quiz</h1>
+    <ul class="quiz-list">
         <% if (progress.level >= 1) { %>
             <li><a href="/quiz?quizId=1">Addition Quiz</a></li>
         <% } else { %>
-            <li>🔒 Addition Quiz (Locked)</li>
+            <li class="locked">🔒 Addition Quiz (Locked)</li>
         <% } %>
 
         <% if (progress.level >= 2) { %>
             <li><a href="/quiz?quizId=2">Subtraction Quiz</a></li>
         <% } else { %>
-            <li>🔒 Subtraction Quiz (Locked)</li>
+            <li class="locked">🔒 Subtraction Quiz (Locked)</li>
         <% } %>
 
         <% if (progress.level >= 3) { %>
             <li><a href="/quiz?quizId=3">Multiplication Quiz</a></li>
         <% } else { %>
-            <li>🔒 Multiplication Quiz (Locked)</li>
+            <li class="locked">🔒 Multiplication Quiz (Locked)</li>
         <% } %>
 
         <% if (progress.level >= 4) { %>
             <li><a href="/quiz?quizId=4">Division Quiz</a></li>
         <% } else { %>
-            <li>🔒 Division Quiz (Locked)</li>
+            <li class="locked">🔒 Division Quiz (Locked)</li>
         <% } %>
     </ul>
 </body>
 </html>
+
 
 <!-- lock emoji: https://gist.github.com/rxaviers/7360908 -->

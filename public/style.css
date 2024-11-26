@@ -1,1 +1,339 @@
-/*css goes here*/
+/*css*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Homepage Layout */
+.homepage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px; 
+}
+
+/* Header Styling */
+.homepage-header {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.homepage-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.homepage-header p {
+    font-size: 1.2rem;
+    align-items: center;
+    width: 600px;
+    justify-content: center;
+    text-align: center; 
+    margin: 0 auto;
+}
+
+.homepage-header a {
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    margin-top: 50px;
+}
+
+/* Main Content Section */
+.homepage-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: -50px;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    width: 100%;
+}
+
+.intro p {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Action Buttons */
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    padding: 20px;
+    margin-top: -10px;
+}
+
+.actions button {
+    padding: 12px 30px; 
+    font-size: 1.1rem; 
+    border-radius: 20px;
+    font-weight: 550;
+    border: 1px solid #afafaf; 
+    box-sizing: border-box; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.actions button:hover {
+    background-color: #afafaf;
+}
+
+/* Disabled Button Styling */
+.actions button:disabled {
+    background-color: #b0b0b0;
+    color: #666;
+    cursor: not-allowed;
+    border: 1px solid transparent; 
+}
+
+
+
+.about-link {
+    color: #656464;
+}
+
+/* Quiz Link Section */
+.quiz-link {
+    text-align: center;
+}
+
+.quiz-link a {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #656464;
+}
+
+.quiz-link a:hover {
+    color: #8e8e8e;
+}
+
+/* Scoped Login and Register Page Styling */
+.login-page .form-container,
+.register-page .form-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-page .form-container h1,
+.register-page .form-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.login-page form,
+.register-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-page label,
+.register-page label {
+    font-size: 1rem;
+    color: #3a3c3e;
+    text-align: left;
+    display: block;
+}
+
+.login-page input,
+.register-page input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-page input:focus,
+.register-page input:focus {
+    outline: none;
+    border-color: #909091;
+    box-shadow: 0 0 5px rgba(193, 195, 198, 0.5);
+}
+
+
+.register-page form button {
+    display: inline-block;
+    background-color: #7f7f81;
+    color: white;
+    font-size: 1rem;
+    font-weight: 550; 
+    padding: 10px 20px;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-self: center;
+    white-space: nowrap;
+    margin: 10px;
+}
+
+.register-page form button:hover {
+    background-color: #aaaaaa;
+}
+
+.login-page form button {
+    display: inline-block;
+    background-color: #7f7f81;
+    color: white;
+    font-size: 1rem; 
+    font-weight: 550;
+    padding: 10px 20px;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-self: center;
+    white-space: nowrap;
+    margin: 20px;
+}
+
+/* Secondary button styling  */
+.secondary-button {
+    font-size: 1rem;
+    background-color: #ababab; 
+    color: #ffffff;
+    font-weight: 550;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer; 
+    border: none;
+    transition: background-color 0.3s ease; 
+    margin: 10px;
+}
+
+.secondary-button:hover {
+    background-color: #8c8a8a;
+}
+
+/* Disabled secondary button */
+.secondary-button:disabled {
+    background-color: #b0b0b0; 
+    color: #c2c0c0; 
+    cursor: not-allowed; 
+}
+
+.login-page form button:hover {
+    background-color: #898989;
+}
+
+.login-page .link,
+.register-page .link {
+    margin: 40px;
+    font-size: 1rem;
+    color: #656464;
+    text-decoration: none;
+}
+
+.login-page .link:hover,
+.register-page .link:hover {
+    text-decoration: underline;
+}
+
+.register-page form button:disabled {
+    background-color: #79797a;
+    cursor: not-allowed;
+}
+
+/* Quiz Page Styling */
+.quiz-container {
+    background-color: #f9f9f9;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.quiz-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.quiz-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.question-container {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.question-container p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 14px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #a9aaab;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 550;
+}
+
+button[type="submit"]:hover {
+    background-color: #898989;
+}
+

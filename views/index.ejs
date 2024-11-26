@@ -5,13 +5,19 @@
     <title><%= quizName %></title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Welcome to <%= quizName %>!</h1>
-            <a href="/about" class="about-link">Who and what are we?</a>
-        </header>
-        
+<body class="homepage">
+    <header class="homepage-header">
+        <h1>Welcome to <%= quizName %>!</h1>
+        <br>
+        <p>
+            Our app helps you test your knowledge and grow through interactive quizzes. 
+            Join us today to explore and improve in a fun and engaging way!
+        </p>
+        <br>
+        <a href="/about" class="about-link">Find out more about us...</a>
+    </header>
+    
+    <main class="homepage-main">
         <section class="intro">
             <p>Get ready to test your knowledge with our quiz!</p>
             <h2>Remember to do your best, and don't worry, you're only going to get better</h2>
@@ -34,6 +40,7 @@
                 <a href="/quiz-list">Head back to quizzes</a>
             </section>
         <% } %>
-    </div>
+    </main>
 </body>
 </html>
+

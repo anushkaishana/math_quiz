@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title><%= quizName %> - Quiz</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1><%= quizName %> Quiz</h1>
-    <p>Please answer the questions below to the best of your knowledge.</p>
-    
-    <form action="/quiz/submit" method="POST">
-        <!-- Passing the quiz_id to the server-->
-        <input type="hidden" name="quizId" value="<%= quizId %>">
-    
-        <% questions.forEach((q, index) => { %>
-            <div>
-                <p><%= index + 1 %>. <%= q.question %></p>
-                <% q.options.forEach((option, i) => { %>
-                    <label>
-                        <input type="radio" name="answers[<%= index %>]" value="<%= i %>" required>
-                        <%= option %>
-                    </label><br>
-                <% }); %>
-            </div>
-        <% }); %>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="quiz-container">
+        <h1><%= quizName %> Quiz</h1>
+        <p>Please answer the questions below to the best of your knowledge.</p>
+        
+        <form action="/quiz/submit" method="POST">
+            <!-- Passing the quiz_id to the server-->
+            <input type="hidden" name="quizId" value="<%= quizId %>">
+        
+            <% questions.forEach((q, index) => { %>
+                <div class="question-container">
+                    <p><%= index + 1 %>. <%= q.question %></p>
+                    <% q.options.forEach((option, i) => { %>
+                        <label>
+                            <input type="radio" name="answers[<%= index %>]" value="<%= i %>" required>
+                            <%= option %>
+                        </label>
+                    <% }); %>
+                </div>
+            <% }); %>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 </body>
 </html>
