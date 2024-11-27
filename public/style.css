@@ -152,7 +152,7 @@ body {
 .register-page .form-container h1 {
     font-size: 2rem;
     color: #2c3e50;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .login-page form,
@@ -168,6 +168,7 @@ body {
     color: #3a3c3e;
     text-align: left;
     display: block;
+    margin-bottom: 0;
 }
 
 .login-page input,
@@ -337,3 +338,178 @@ button[type="submit"]:hover {
     background-color: #898989;
 }
 
+/* Quiz List Page Styling */
+.quiz-list-page {
+    display: block; 
+    padding: 20px; 
+}
+
+/* Header Links */
+.quiz-list-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 30px; 
+    top: 40; 
+    left: 40; 
+    padding: 20px 30px;
+}
+
+.quiz-list-header img {
+    width: 30px; 
+    height: auto; 
+}
+
+
+/* Title Styling */
+.quiz-list-page h1 {
+    font-size: 1.7rem; 
+    margin-bottom: 40px;
+    text-decoration: underline; 
+    margin-left: 70px;
+}
+
+/* Quiz List Styling */
+.quiz-list {
+    list-style-type: number; 
+    width: 100%; 
+    
+}
+
+.quiz-list li {
+    margin-bottom: 15px;
+    margin-left: 130px;
+}
+
+.quiz-list li a{
+    text-decoration: none;
+    align-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    
+    color: #3d3c3c;
+}
+
+.quiz-list li.locked {
+    color: #888; 
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.aboutpage {
+    display: block; 
+    padding: 20px; 
+    text-align: center;
+}
+
+.aboutpage h1{
+    font-size: 2rem;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+.aboutpage p{
+    font-size: 1.2rem;
+}
+
+.aboutpage a{
+    margin-top: 40px;
+    color: #3d3c3c;
+}
+
+.aboutpage-header {
+    position: absolute; 
+    padding: 20px 30px;
+    z-index: 1000; 
+}
+
+.aboutpage-header img {
+    width: 30px; 
+    height: auto; 
+}
+
+
+.scorepage {
+    display: block; 
+    padding: 90px; 
+    text-align: center;
+}
+
+
+.scorepage h1{
+    font-size: 2rem;
+    margin: 40px;
+}
+
+.scorepage p{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.scorepage a{
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #656464;
+}
+
+.scorepage a:hover{
+    text-decoration: underline;
+}
+
+.profilepage h1{
+    font-size: 2rem;
+    text-align: center;
+    padding: 40px;
+}
+
+.profilepage p{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.profile-actions {
+    display: flex;             
+    flex-direction: column;   
+    align-items: center;       
+    justify-content: center;   
+    gap: 10px;              
+    margin-top: 20px;          
+}
+
+.profile-actions button {
+    padding: 12px 30px; 
+    font-size: 1.1rem; 
+    border-radius: 20px;
+    font-weight: 550;
+    border: 1px solid #afafaf; 
+    box-sizing: border-box; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-actions button:hover {
+    background-color: #afafaf;
+}
+
+.profile-actions a {
+    color: #3d3c3c;
+    text-decoration: none; 
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile-actions a:hover{
+    text-decoration: underline; 
+}
+
+
+.profilep {
+    font-weight: bold;
+    color: #656464;
+}
