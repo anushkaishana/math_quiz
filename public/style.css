@@ -436,19 +436,35 @@ button[type="submit"]:hover {
 }
 
 
-.scorepage h1{
-    font-size: 2rem;
-    margin: 40px;
+.main-message {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #202020;
+    margin-bottom: 10px;
 }
 
-.scorepage p{
-    font-size: 1.4rem;
+.main-message p {
+}
+
+
+.sub-message {
+    font-size: 1.8rem;
     font-weight: bold;
-    margin: 20px;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.additional-message {
+    font-size: 1.2rem;
+    color: #928f8f;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 100px;
 }
 
 .scorepage a{
-    margin-top: 40px;
+    margin-top: 0px;
     font-weight: bold;
     font-size: 1.2rem;
     text-decoration: none;
@@ -458,6 +474,19 @@ button[type="submit"]:hover {
 .scorepage a:hover{
     text-decoration: underline;
 }
+
+
+.scorepage-header {
+    position: absolute; 
+    margin: -40px;
+    z-index: 1000; 
+}
+
+.scorepage-header img {
+    width: 30px; 
+    height: auto; 
+}
+
 
 .profilepage h1{
     font-size: 2rem;

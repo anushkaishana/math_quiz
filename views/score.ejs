@@ -5,9 +5,18 @@
     <title>Quiz Results</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body class="scorepage">
-    <h1>Congrats, here is your score:</h1>
-    <p>You scored <%= score %> out of <%= total %></p>
+    <div class="scorepage-header">
+        <a href="/">
+            <img src="/home-icon.png" alt="Head back home">
+        </a>  
+    </div>
+<div class="container">
+    <p class="main-message"><%= mainMessage %></p>
+    <p class="sub-message"><%= subMessage %></p>
+    <p class="additional-message"><%= additionalMessage %></p>
     <a href="/quiz-list">Head back and take another quiz</a>
+</div>
 </body>
 </html>

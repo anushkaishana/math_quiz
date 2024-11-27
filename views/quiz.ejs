@@ -13,6 +13,7 @@
         <form action="/quiz/submit" method="POST">
             <!-- Passing the quiz_id to the server-->
             <input type="hidden" name="quizId" value="<%= quizId %>">
+            <input type="hidden" name="quizName" value="<%= quizName %>">
         
             <% questions.forEach((q, index) => { %>
                 <div class="question-container">

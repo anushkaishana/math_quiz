@@ -42,7 +42,7 @@ router.get('/quiz', (req, res) => {
         3: "Multiplication",
         4: "Division",
     };
-    const quizName = quizNameMap[quizId]
+    const quizName = quizNameMap[quizId];
 
   //querying databse to fetch questions
   const query = "SELECT * FROM questions WHERE quiz_id = ?";
@@ -66,7 +66,8 @@ router.get('/quiz', (req, res) => {
 router.post('/quiz/submit', (req, res) => {
   //answers by the user
   const userAnswers = req.body.answers;
-  const quizId = parseInt(req.body.quizId);       
+  const quizId = parseInt(req.body.quizId);
+      
   //initializing the score counter
   let score = 0;
 
@@ -112,17 +113,35 @@ router.post('/quiz/submit', (req, res) => {
                 return res.status(500).send("Error updating progress.");
               }
               //render score after updating progress
-              return res.render('score', { score, total: totalQuestions });
+              return res.render('score', {
+                score,
+                total: totalQuestions,
+                mainMessage: `🎉 Congratulations, ${req.session.userName}!`,
+                subMessage: `You passed the ${req.body.quizName} quiz !`,
+                additionalMessage: `You've unlocked the next level!`,
+              });
             });
           } else {
-            //score rendered if level doesn't change
-            return res.render('score', { score, total: totalQuestions });
+            // Render the score page without progress update
+            return res.render('score', {
+              score,
+              total: totalQuestions,
+              mainMessage: `🎉 Congratulations, ${req.session.userName}!`,
+              subMessage: `You passed the ${req.body.quizName} quiz !!`,
+              additionalMessage: ``,
+            });
           }
         });
       } else {
-        //render score for when user scores less than 80%
-        res.render('score', { score, total: totalQuestions });
-      }  
+        // Render the score page for a failed attempt
+        res.render('score', {
+          score,
+          total: totalQuestions,
+          mainMessage: `Oops, bad luck ${req.session.userName}!`,
+          subMessage: `You scored ${score}/${totalQuestions}.`,
+          additionalMessage: `Try again to unlock the next level!`,
+      });
+    }
   });
 });
 
