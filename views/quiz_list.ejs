@@ -41,6 +41,30 @@
         <% } else { %>
             <li class="locked">🔒 Division Quiz (Locked)</li>
         <% } %>
+
+        <% if (progress.level >= 5) { %>
+            <li><a href="/quiz?quizId=5">Geometry Quiz</a></li>
+        <% } else { %>
+            <li class="locked">🔒 Geometry Quiz (Locked)</li>
+        <% } %>
+
+        <% if (progress.level >= 6) { %>
+            <li><a href="/quiz?quizId=6">Time Quiz</a></li>
+        <% } else { %>
+            <li class="locked">🔒 Time Quiz (Locked)</li>
+        <% } %>
+
+        <% if (progress.level >= 7) { %>
+            <li><a href="/quiz?quizId=7">Algebra Level 1 Quiz</a></li>
+        <% } else { %>
+            <li class="locked">🔒 Algebra Level 1 Quiz (Locked)</li>
+        <% } %>
+
+        <% if (progress.level >= 8) { %>
+            <li><a href="/quiz?quizId=8">Algebra Level 2 Quiz</a></li>
+        <% } else { %>
+            <li class="locked">🔒 Algebra Level 2 Quiz (Locked)</li>
+        <% } %>
     </ul>
 </body>
 </html>

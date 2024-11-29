@@ -37,10 +37,14 @@ router.get('/quiz', (req, res) => {
   
   const quizId = req.query.quizId; 
     const quizNameMap = {
-        1: "Addition",
-        2: "Subtraction",
-        3: "Multiplication",
-        4: "Division",
+      1: "Addition",
+      2: "Subtraction",
+      3: "Multiplication",
+      4: "Division",
+      5: "Geometry",
+      6: "Time",
+      7: "Algebra Level 1",
+      8: "Algebra Level 2"
     };
     const quizName = quizNameMap[quizId];
 
