@@ -16,7 +16,7 @@ router.get('/about', (req, res) => {
 });
 
 
-router.get('<%= baseURL %>/quiz-list', (req, res) => {
+router.get('/quiz-list', (req, res) => {
   const query = "SELECT level FROM user_progress WHERE user_id = ?";
   db.query(query, [req.session.userId], (err, results) => {
     if (err) {
@@ -219,7 +219,7 @@ router.post('/login', (req, res) => {
     req.session.userId = results[0].id;
     req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
     
-    res.redirect('/quiz-list');
+    res.redirect('<%= baseURL %>/quiz-list');
   });
 });
 
