@@ -219,7 +219,7 @@ router.post('/login', (req, res) => {
     req.session.userId = results[0].id;
     req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
     
-    res.redirect('/quiz-list');
+    res.render('login', { isLoggedIn: true });
   });
 });
 

@@ -5,7 +5,6 @@ const port = 8000;
 var mysql = require('mysql');
 const session = require('express-session');
 
-
 app.use(
   session({
       secret: 'session_key', 
