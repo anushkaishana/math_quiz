@@ -197,8 +197,7 @@ router.post('/registered', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  const isLoggedIn = req.session.userId ? true : false; 
-  res.render('login', { isLoggedIn });
+  res.render('login');
 });
 
 router.post('/login', (req, res) => {
@@ -220,7 +219,7 @@ router.post('/login', (req, res) => {
     req.session.userId = results[0].id;
     req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
     
-    res.render('login', { isLoggedIn: true });
+    res.redirect('/quiz-list');
   });
 });
 
