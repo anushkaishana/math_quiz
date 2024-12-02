@@ -197,7 +197,8 @@ router.post('/registered', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  res.render('login');
+  const isLoggedIn = req.session.userId ? true : false; 
+  res.render('login', { isLoggedIn });
 });
 
 router.post('/login', (req, res) => {
