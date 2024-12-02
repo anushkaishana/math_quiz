@@ -16,7 +16,7 @@ router.get('/about', (req, res) => {
 });
 
 
-router.get('/quiz-list', (req, res) => {
+router.get('<%= baseURL %>/quiz-list', (req, res) => {
   const query = "SELECT level FROM user_progress WHERE user_id = ?";
   db.query(query, [req.session.userId], (err, results) => {
     if (err) {
