@@ -219,7 +219,7 @@ router.post('/login', (req, res) => {
     req.session.userId = results[0].id;
     req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
     
-    res.redirect(`${baseURL}quiz-list`);
+    res.redirect('/quiz-list');
   });
 });
 
@@ -230,7 +230,7 @@ router.get('/logout', (req, res) => {
       console.error("Logout error:", err);
       res.status(500).send("Error logging out.");
     } else {
-      res.redirect(`${baseURL}login`);
+      res.redirect('/login');
     }
   });
 });
