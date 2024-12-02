@@ -9,7 +9,7 @@
 <body class="register-page">
     <div class="form-container">
         <h1>Create Account</h1>
-        <form method="POST" action="/registered">
+        <form method="POST" action="<%= baseURL %>/registered">
             <label for="first">First Name:</label>
             <input type="text" id="first" name="first" placeholder="Enter your first name" required>
             
@@ -26,7 +26,7 @@
         </form>
         <p>OR</p>
         <% if (!isLoggedIn) { %>
-            <a href="/login"><button class="secondary-button">Sign in to your account</button></a>
+            <a href="<%= baseURL %>/login"><button class="secondary-button">Sign in to your account</button></a>
         <% } else { %>
             <button class="secondary-button" disabled>Sign in to your account</button>
         <% } %>

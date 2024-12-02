@@ -5,6 +5,14 @@ const port = 8000;
 var mysql = require('mysql');
 const session = require('express-session');
 
+const baseURL = "/usr/206"; // Base path for your application
+
+// Make `baseURL` available to all views
+app.use((req, res, next) => {
+  res.locals.baseURL = baseURL;
+  next();
+});
+
 app.use(
   session({
       secret: 'session_key', 

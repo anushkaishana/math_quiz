@@ -15,7 +15,7 @@
             Join us today to explore and improve in a fun and engaging way!
         </p>
         <br>
-        <a href="/about" class="about-link">Find out more about us...</a>
+        <a href="<%= baseURL %>/about" class="about-link">Find out more about us...</a>
     </header>
     
     <main class="homepage-main">
@@ -25,12 +25,12 @@
         </section>
 
         <section class="actions">
-            <a href="/register">
+            <a href="<%= baseURL %>/register">
                 <button>Create new account</button>
             </a>
 
             <% if (!isLoggedIn) { %>
-                <a href="/login"><button>Sign in & Get Started</button></a>
+                <a href="<%= baseURL %>/login"><button>Sign in & Get Started</button></a>
             <% } else { %>
                 <button disabled>Sign in & Get Started</button>
             <% } %>
@@ -38,7 +38,7 @@
 
         <% if (isLoggedIn) { %>
             <section class="quiz-link">
-                <a href="/quiz-list">Head back to Quizzing</a>
+                <a href="<%= baseURL %>/quiz-list">Head back to Quizzing</a>
             </section>
         <% } %>
     </main>
