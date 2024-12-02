@@ -5,12 +5,13 @@ const port = 8000;
 var mysql = require('mysql');
 const session = require('express-session');
 
-const baseURL = "/usr/206";
+const baseURL = "/usr/206/";
 
 app.use((req, res, next) => {
   res.locals.baseURL = baseURL;
   next();
 });
+
 
 app.use(
   session({
