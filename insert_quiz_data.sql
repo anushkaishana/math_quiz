@@ -7,9 +7,9 @@ INSERT INTO questions (quiz_id, question, options, answer) VALUES
 (1, 'What is 10 + 12?', '["20", "21", "22", "23"]', 2),
 (1, 'What is 7 + 8?', '["14", "15", "16", "17"]', 1),
 (1, 'What is 15 + 20?', '["30", "35", "40", "45"]', 1),
-(1, 'What is 25 + 30?', '["50", "55", "60", "65"]', 2),
-(1, 'What is 13 + 17?', '["28", "30", "32", "35"]', 0),
-(1, 'What is 40 + 25?', '["60", "65", "70", "75"]', 2);
+(1, 'What is 25 + 30?', '["50", "55", "60", "65"]', 1),
+(1, 'What is 13 + 17?', '["28", "30", "32", "35"]', 1),
+(1, 'What is 40 + 25?', '["60", "65", "70", "75"]', 1);
 
 -- subtraction
 INSERT INTO questions (quiz_id, question, options, answer) VALUES
@@ -79,7 +79,7 @@ INSERT INTO questions (quiz_id, question, options, answer) VALUES
 
 -- algebra quiz level 2
 INSERT INTO questions (quiz_id, question, options, answer) VALUES
-(8, 'What is the value of x in 5x + 3 = 23?', '["3", "4", "5", "6"]', 2),
+(8, 'What is the value of x in 5x + 3 = 23?', '["3", "4s", "5", "6"]', 2),
 (8, 'Solve for x: 2x - 5 = 13', '["8", "9", "7", "6"]', 3),
 (8, 'What is the solution to 3x + 4 = 19?', '["4", "5", "6", "7"]', 2),
 (8, 'Solve for x: 4x - 7 = 9', '["4", "5", "3", "2"]', 0),

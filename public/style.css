@@ -8,7 +8,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +19,7 @@ body {
 
 /* Homepage Layout */
 .homepage {
+    font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -91,6 +92,7 @@ body {
 }
 
 .actions button {
+    font-family: 'Josefin Sans', sans-serif;
     padding: 12px 30px; 
     font-size: 1.1rem; 
     border-radius: 20px;
@@ -142,7 +144,7 @@ body {
     background-color: #fff;
     padding: 40px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
     text-align: center;
@@ -173,6 +175,7 @@ body {
 
 .login-page input,
 .register-page input {
+    font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -189,6 +192,7 @@ body {
 
 
 .register-page form button {
+    font-family: 'Josefin Sans', sans-serif;
     display: inline-block;
     background-color: #7f7f81;
     color: white;
@@ -211,6 +215,7 @@ body {
 }
 
 .login-page form button {
+    font-family: 'Josefin Sans', sans-serif;
     display: inline-block;
     background-color: #7f7f81;
     color: white;
@@ -230,6 +235,7 @@ body {
 
 /* Secondary button styling  */
 .secondary-button {
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1rem;
     background-color: #ababab; 
     color: #ffffff;
@@ -323,6 +329,7 @@ input[type="radio"] {
 }
 
 button[type="submit"] {
+    font-family: 'Josefin Sans', sans-serif;
     background-color: #a9aaab;
     color: white;
     padding: 12px 20px;
@@ -511,6 +518,7 @@ button[type="submit"]:hover {
 }
 
 .profile-actions button {
+    font-family: 'Josefin Sans', sans-serif;
     padding: 12px 30px; 
     font-size: 1.1rem; 
     border-radius: 20px;
@@ -563,6 +571,7 @@ button[type="submit"]:hover {
 }
 
 .registered button {
+    font-family: 'Josefin Sans', sans-serif;
     padding: 12px 30px; 
     font-size: 1.1rem; 
     border-radius: 20px;
