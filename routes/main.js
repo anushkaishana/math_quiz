@@ -200,7 +200,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-const basePath = '/usr/206';
+//const basePath = '/usr/206';
 
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
@@ -236,7 +236,7 @@ router.get('/logout', (req, res) => {
       console.error("Logout error:", err);
       res.status(500).send("Error logging out.");
     } else {
-      res.redirect('/login');
+      res.redirect(`${basePath}/login`);
     }
   });
 });

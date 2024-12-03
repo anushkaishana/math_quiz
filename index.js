@@ -5,6 +5,12 @@ const port = 8000;
 var mysql = require('mysql');
 const session = require('express-session');
 
+//dynamically determining the base path based on the environment
+const basePath = process.env.NODE_ENV === 'production' ? '/usr/206' : '';
+
+console.log(`Base path is set to: ${basePath}`);
+
+
 app.use(
   session({
       secret: 'session_key', 
