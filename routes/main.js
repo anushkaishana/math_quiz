@@ -200,6 +200,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+const basePath = '/usr/206';
+
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
@@ -222,16 +224,10 @@ router.post('/login', (req, res) => {
     console.log("User  ID:", req.session.userId);
     console.log("User  Name:", req.session.userName);
 
-    //constructing the redirect url dynamically based on the request
-    const redirectUrl = determineRedirectUrl(req.session.userId);
-    res.redirect(redirectUrl);
+    res.redirect(`${basePath}/quiz-list`);
   });
 });
 
-function determineRedirectUrl(userId) {
-
-  return '/quiz-list'; 
-}
 
 //logging out of session
 router.get('/logout', (req, res) => {
