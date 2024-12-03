@@ -200,8 +200,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/usr/206' : ''; 
+const basePath = '/usr/206';
 
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
