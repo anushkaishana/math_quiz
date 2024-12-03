@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const data = { quizName: "Educational Quiz App" };
+const data = { quizName: "MathWhiz" };
 
 router.get('/', (req, res) => {
   //checking whether user is logged in or not
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/about', (req, res) => {
-  res.render('about', { quizName: "Educational Quiz App" }); // Pass `quizName` dynamically
+  res.render('about', { quizName: "MathWhiz" }); // Pass `quizName` dynamically
 });
 
 
@@ -151,7 +151,7 @@ router.post('/quiz/submit', (req, res) => {
 
 router.get('/register', (req, res) => {
   const isLoggedIn = req.session.userId ? true : false;
-  res.render('register', { shopName: "Educational Quiz App", isLoggedIn });
+  res.render('register', { shopName: "MathWhiz", isLoggedIn });
 });
 
 

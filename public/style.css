@@ -401,52 +401,64 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 
-/* Parent Container Reset */
-.about-page-wrapper {
-    display: block; /* Ensure no flexbox or grid is applied */
-    height: auto; /* Remove any fixed height that could cause centering */
-    padding: 0; /* Reset padding */
-    margin: 0; /* Reset margins */
-}
-
-/* Content Container */
-.about-page {
-    display: block; 
-    padding: 20px; 
-    max-width: 800px; 
-    margin: 0 auto; 
-    text-align: left; 
-}
-
-/* Heading Styling */
-.about-page h1 {
-    font-size: 2rem;
-    color: #222;
-    margin-bottom: 20px;
-}
-
-/* Paragraph Styling */
-.about-page p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-
-.aboutpage h1{
-    font-size: 2rem;
-    margin-top: -200px;
-    margin-bottom: 30px;
-}
-
-.aboutpage p{
+.aboutpage p {
     font-size: 1.2rem;
+    color: #4e4d4d; 
+    margin-bottom: 20px;
+    max-width: 1400px;
 }
 
-.aboutpage a{
+/* Strong Text */
+.aboutpage p strong {
+    color: #1b1c1c; 
+}
+
+/* mainheading */
+.aboutpage h1 {
+    font-size: 2.5rem;
+    color: #3c3d3d;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Subheading */
+.aboutpage h2 {
+    font-size: 2rem;
+    color: #425353;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* List Styling */
+.aboutpage ul {
+    list-style-type:circle; 
+    padding-left: 100px; 
+    margin-bottom: 40px;
     margin-top: 40px;
-    color: #3d3c3c;
+}
+
+.aboutpage li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.aboutpage li strong {
+    color: #494a4a; 
+}
+
+/* Link Styling */
+.aboutpage a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #595e61;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.aboutpage a:hover {
+    color: #202020;
+    text-decoration: underline;
 }
 
 .about-header {
