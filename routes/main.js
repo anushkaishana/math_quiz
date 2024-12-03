@@ -219,6 +219,9 @@ router.post('/login', (req, res) => {
     req.session.userId = results[0].id;
     req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
     
+    console.log("User  ID:", req.session.userId);
+    console.log("User  Name:", req.session.userName);
+    
     res.redirect('/quiz-list');
   });
 });
