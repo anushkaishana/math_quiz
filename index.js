@@ -24,8 +24,8 @@ app.use(express.static('public'));
 //databse sql connection
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root', 
-    password: 'Anushka12#', 
+    user: 'quiz_app_user', 
+    password: 'localpassword12', 
     database: 'quiz_app',
   });
   
