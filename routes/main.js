@@ -221,8 +221,10 @@ router.post('/login', (req, res) => {
     
     console.log("User  ID:", req.session.userId);
     console.log("User  Name:", req.session.userName);
-    
-    res.redirect('/quiz-list');
+
+    //constructing the redirect url dynamically based on the request
+    const redirectUrl = `${req.protocol}://${req.get('host')}/usr/206/quiz-list`;
+    res.redirect(redirectUrl);
   });
 });
 
