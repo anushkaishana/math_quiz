@@ -209,7 +209,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-const basePath = '/usr/206';
+//const basePath = '/usr/206';
 
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
@@ -236,7 +236,8 @@ router.post('/login', (req, res) => {
     console.log("User  ID:", req.session.userId);
     console.log("User  Name:", req.session.userName);
 
-    res.redirect(`${basePath}/quiz-list`);
+    //${basePath}
+    res.redirect(`/quiz-list`);
   });
 });
 
