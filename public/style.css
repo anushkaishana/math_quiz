@@ -8,6 +8,10 @@
 
 /* Body Styling */
 body {
+    background-image: url('background.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: center;
@@ -16,6 +20,26 @@ body {
     flex-direction: column;
     padding: 20px;
 }
+
+.aboutpage {
+    background: rgba(245, 245, 245, 0.8);
+    background-image: url('background.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay; 
+}
+
+.quiz-list-page{
+    background: rgba(245, 245, 245, 0.5);
+    background-image: url('background.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay; 
+}
+
+
 
 /* Homepage Layout */
 .homepage {
@@ -347,6 +371,7 @@ button[type="submit"]:hover {
 .quiz-list-page {
     display: block; 
     padding: 20px; 
+    text-align: center;
 }
 
 /* Header Links */
@@ -378,12 +403,12 @@ button[type="submit"]:hover {
 .quiz-list {
     list-style-type: number; 
     width: 100%; 
-    
 }
 
 .quiz-list li {
     margin-bottom: 15px;
-    margin-left: 130px;
+    margin-left: 700px;
+    text-align: left;
 }
 
 .quiz-list li a{
@@ -391,8 +416,11 @@ button[type="submit"]:hover {
     align-content: center;
     align-items: center;
     font-size: 1.2rem;
-    
     color: #3d3c3c;
+}
+
+.quiz-list li a:hover{
+    text-decoration: underline;
 }
 
 .quiz-list li.locked {
@@ -404,7 +432,7 @@ button[type="submit"]:hover {
 .aboutpage p {
     font-size: 1.1rem;
     color: #4e4d4d; 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     max-width: 1400px;
 }
 
@@ -440,7 +468,7 @@ button[type="submit"]:hover {
 
 .aboutpage li {
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .aboutpage li strong {
@@ -624,4 +652,196 @@ button[type="submit"]:hover {
 
 .registered button:hover {
     background-color: #afafaf;
+}
+
+css
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-image: url('background.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .homepage-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .homepage-header p {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .quiz-list-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quiz-list-header img {
+        margin-bottom: 10px;
+    }
+
+    .quiz-list li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .aboutpage h1 {
+        font-size: 2rem;
+    }
+
+    .aboutpage h2 {
+        font-size: 1.5rem;
+    }
+
+    .aboutpage p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .homepage-header h1 {
+        font-size: 2rem;
+    }
+
+    .homepage-header p {
+        font-size: 0.9rem;
+    }
+
+    .homepage-main {
+        gap: 5px;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px; 
+    }
+
+    .actions button {
+        width: 100%; 
+        max-width: 300px; 
+    }
+
+    .quiz-container {
+        padding: 15px;
+    }
+
+    .quiz-container h1 {
+        font-size: 2rem;
+    }
+
+    .quiz-container p {
+        font-size: 1rem;
+    }
+
+    .question-container {
+        padding: 10px;
+    }
+
+    .question-container p {
+        font-size: 1rem;
+    }
+
+    .profilepage h1 {
+        font-size: 1.8rem;
+    }
+
+    .profilepage p {
+        font-size: 1rem;
+    }
+
+    .registered h1 {
+        font-size: 1.8rem;
+    }
+
+    .registered-login {
+        font-size: 1rem;
+    }
+
+    .registered-welcome {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .homepage-header p {
+        font-size: 0.8rem;
+    }
+
+    .actions button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .quiz-container {
+        padding: 10px;
+    }
+
+    .quiz-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .quiz-container p {
+        font-size: 0.9rem;
+    }
+
+    .question-container p {
+        font-size: 0.9rem;
+    }
+
+    .aboutpage h1 {
+        font-size: 1.5rem;
+    }
+
+    .aboutpage h2 {
+        font-size: 1.2rem;
+    }
+
+    .aboutpage p {
+        font-size: 0.9rem;
+    }
+
+    .scorepage a {
+        font-size: 1rem;
+    }
+
+    .scorepage a:hover {
+        font-size: 1rem;
+    }
 }

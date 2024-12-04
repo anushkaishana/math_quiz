@@ -47,10 +47,10 @@ INSERT INTO questions (quiz_id, question, options, answer) VALUES
 -- geometry quiz
 INSERT INTO questions (quiz_id, question, options, answer) VALUES
 (5, 'What is the perimeter of a square with side length 4?', '["8", "12", "16", "20"]', 2),
-(5, 'What is the area of a rectangle with length 6 and width 3?', '["12", "15", "18", "20"]', 0),
+(5, 'What is the area of a rectangle with length 6 and width 3?', '["12", "15", "18", "20"]', 2),
 (5, 'What is the area of a circle with radius 5?', '["25π", "10π", "15π", "20π"]', 0),
 (5, 'What is the volume of a cube with side length 4?', '["16", "24", "36", "64"]', 3),
-(5, 'What is the circumference of a circle with radius 7?', '["14π", "21π", "28π", "35π"]', 1),
+(5, 'What is the circumference of a circle with radius 7?', '["14π", "21π", "28π", "35π"]', 0),
 (5, 'What is the area of a triangle with base 6 and height 4?', '["12", "15", "18", "24"]', 0),
 (5, 'What is the surface area of a sphere with radius 3?', '["36π", "27π", "18π", "9π"]', 0),
 (5, 'What is the area of a parallelogram with base 5 and height 6?', '["30", "35", "40", "45"]', 0);
