@@ -563,6 +563,10 @@ button[type="submit"]:hover {
     height: auto; 
 }
 
+.profilepage{
+    align-content: center;
+    align-items: center;
+}
 
 .profilepage h1{
     font-size: 2rem;
@@ -655,34 +659,7 @@ button[type="submit"]:hover {
     background-color: #afafaf;
 }
 
-css
 
-Verify
-
-Open In Editor
-Edit
-Copy code
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    background-image: url('background.png'); 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Josefin Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    padding: 20px;
-}
 
 /* Responsive Design */
 @media (max-width: 1200px) {
