@@ -722,16 +722,7 @@ button[type="submit"]:hover {
         gap: 5px;
     }
 
-    .actions {
-        flex-direction: column;
-        align-items: center; 
-        gap: 15px; 
-    }
-
-    .actions button {
-        width: 100%; 
-        max-width: 300px; 
-    }
+    
 
     .quiz-container {
         padding: 15px;
@@ -804,6 +795,17 @@ button[type="submit"]:hover {
         font-size: 0.9rem;
     }
 
+    .actions {
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px; 
+    }
+
+    .actions button {
+        width: 100%; 
+        max-width: 300px; 
+    }
+    
     .aboutpage h1 {
         font-size: 1.5rem;
     }
