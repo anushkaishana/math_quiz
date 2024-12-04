@@ -5,9 +5,14 @@ const router = express.Router();
 const data = { quizName: "MathWhiz" };
 
 router.get('/', (req, res) => {
-  //checking whether user is logged in or not
-  const isLoggedIn = req.session.userId ? true : false; 
-  res.render('index', { quizName: data.quizName, isLoggedIn });
+  // Checking whether user is logged in or not
+  const isLoggedIn = req.session.userId ? true : false;
+  
+  // Define your base path here
+  const basePath = '/usr/206';  
+  
+  // Render the index page with the necessary data
+  res.render('index', { quizName: data.quizName, isLoggedIn, basePath });
 });
 
 
