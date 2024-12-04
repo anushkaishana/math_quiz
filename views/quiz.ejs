@@ -12,21 +12,31 @@
         <p>Please answer the questions below to the best of your knowledge.</p>
         
         <form action="/quiz/submit" method="POST">
+            <!-- Hidden input fields to pass quiz information to the server -->
             <!-- Passing the quiz_id to the server-->
             <input type="hidden" name="quizId" value="<%= quizId %>">
             <input type="hidden" name="quizName" value="<%= quizName %>">
         
+            <!-- Looping over each question in the 'questions' array -->
             <% questions.forEach((q, index) => { %>
                 <div class="question-container">
+                    <!-- Display the question text, dynamically inserted with the index --> 
                     <p><%= index + 1 %>. <%= q.question %></p>
+                    
+                    <!-- Looping over the options for the current question -->
                     <% q.options.forEach((option, i) => { %>
                         <label>
+                             <!-- Radio button for each option, allowing the user to select one answer -->
+                            <!-- 'answers[index]' groups the options for the same question together -->
+                            <!-- The value of the radio button corresponds to the option index -->
                             <input type="radio" name="answers[<%= index %>]" value="<%= i %>" required>
+                            <!-- Display the option text -->
                             <%= option %>
                         </label>
                     <% }); %>
                 </div>
             <% }); %>
+            <!-- Submit button to send the form data to the server -->
             <button type="submit">Submit</button>
         </form>
     </div>

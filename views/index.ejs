@@ -15,6 +15,7 @@
             Join us today to explore and improve in a fun and engaging way!
         </p>
         <br>
+        <!-- Link to the About page for more information -->
         <a href="/about" class="about-link">Find out more about us...</a>
     </header>
     
@@ -29,13 +30,17 @@
                 <button>Create new account</button>
             </a>
 
+             <!-- Conditional rendering based on whether the user is logged in -->
             <% if (!isLoggedIn) { %>
+                <!-- If not logged in, show the sign-in button -->
                 <a href="/login"><button>Sign in & Get Started</button></a>
             <% } else { %>
+                <!-- If logged in, disable the sign-in button -->
                 <button disabled>Sign in & Get Started</button>
             <% } %>
         </section>
 
+        <!-- If the user is logged in, provide a link to the quiz list -->
         <% if (isLoggedIn) { %>
             <section class="quiz-link">
                 <a href="/quiz-list">Head back to Quizzing</a>

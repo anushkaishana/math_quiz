@@ -19,6 +19,7 @@
     
     <h1>Choose a Quiz</h1>
     <ul class="quiz-list">
+        <!-- Check if the user has reached level 1 to unlock the Addition Quiz, similarly for rest of the quizzes -->
         <% if (progress.level >= 1) { %>
             <li><a href="/quiz?quizId=1">Addition Quiz</a></li>
         <% } else { %>

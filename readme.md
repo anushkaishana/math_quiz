@@ -17,20 +17,20 @@ Before running the application, ensure you have the following installed:
 - **Node.js** 
 - **npm** 
 
--Install dependencies:
--express - For building the server
--express-session - For session management
--ejs - For templating
--body-parser - To parse incoming request bodies
+- Install dependencies:
+- express - For building the server
+- express-session - For session management
+- ejs - For templating
+- body-parser - To parse incoming request bodies
 ---
 
 ## Setup Instructions
 
--Download or clone the repository to your local machine.
--Install Node.js and npm
--Install Required Dependencies
--Start the Application
--Access the Application
--You're All Set!
--Begin exploring the app, register a new user, and enjoy the quiz experience!
+- Download or clone the repository to your local machine.
+- Install Node.js and npm
+- Install Required Dependencies
+- Start the Application
+- Access the Application
+- **You're All Set!**
+- Begin exploring the app, register a new user, and enjoy the quiz experience!
 

@@ -8,6 +8,7 @@
 
 /* Body Styling */
 body {
+    /*background image used has been created using canva*/
     background-image: url('background.png'); 
     background-size: cover; 
     background-repeat: no-repeat;

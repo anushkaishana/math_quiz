@@ -5,10 +5,10 @@ const router = express.Router();
 const data = { quizName: "MathWhiz" };
 
 router.get('/', (req, res) => {
-  // Checking whether user is logged in or not
+  //checking whether user is logged in or not
   const isLoggedIn = req.session.userId ? true : false;
   
-  // Define your base path here
+  //base path for routing
   const basePath = '/usr/206';  
   
   // Render the index page with the necessary data
@@ -22,6 +22,7 @@ router.get('/about', (req, res) => {
 
 
 router.get('/quiz-list', (req, res) => {
+  //querying database to get user's current progress
   const query = "SELECT level FROM user_progress WHERE user_id = ?";
   db.query(query, [req.session.userId], (err, results) => {
     if (err) {
@@ -40,6 +41,7 @@ router.get('/quiz-list', (req, res) => {
 
 router.get('/quiz', (req, res) => {
   
+  //mapping quiz IDs to quiz names
   const quizId = req.query.quizId; 
     const quizNameMap = {
       1: "Addition",
@@ -51,6 +53,7 @@ router.get('/quiz', (req, res) => {
       7: "Algebra Level 1",
       8: "Algebra Level 2"
     };
+    //getting quiz based on quizId
     const quizName = quizNameMap[quizId];
 
   //querying databse to fetch questions
@@ -61,6 +64,7 @@ router.get('/quiz', (req, res) => {
       console.error("Database fetch error:", err);
       res.status(500).send("Unable to load quiz questions.");
     } else {
+      //preparing the list of questions and options for rendering
       const questions = data.map((row) => ({
         //displaying the question
         question: row.question, 
@@ -160,7 +164,6 @@ router.get('/register', (req, res) => {
 });
 
 
-
 router.post('/registered', (req, res) => {
   const { first, last, email, password } = req.body;
   
@@ -177,6 +180,7 @@ router.post('/registered', (req, res) => {
       return res.status(400).send("Email is already registered.");
     }
   
+  //insert new user into database
   const query = "INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
   db.query(query, [first, last, email, password], (err, result) => {
     if (err) {
@@ -210,6 +214,7 @@ const basePath = '/usr/206';
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
+  //checking if email and password match an existing user
   const query = "SELECT * FROM users WHERE email = ? AND password = ?";
   db.query(query, [email, password], (err, results) => {
     if (err) {
@@ -218,11 +223,13 @@ router.post('/login', (req, res) => {
       return;
     }
 
+    //if user isn't found invalid credentials message is sent
     if (results.length === 0) {
       res.status(401).send("Invalid email or password.");
       return;
     }
 
+    //storing user ID and name in session after successful login
     req.session.userId = results[0].id;
     req.session.userName = `${results[0].first_name} ${results[0].last_name}`;
     

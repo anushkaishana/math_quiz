@@ -9,10 +9,11 @@
 </head>
 <body class="profilepage">
     <section class="profile">
+        <!-- Header displaying a personalized welcome message with user's name -->
         <h1>Welcome, <%= userName %>!</h1>
         <p>Email: <%= email %></p>
         <p>
-            
+        <!-- Display user's current level and encourage progression --> 
             <!-- strong is used to bold the text to emphasis user progress -->
             You are currently at <strong>Level <%= level %></strong>. 
             Keep going to unlock more levels and challenge yourself!
@@ -21,6 +22,7 @@
             We're excited to see you progress through the quizzes.<br> 
             Remember, the best way to learn is to keep challenging yourself!
         </p>
+        <!-- Section with actions the user can take: sign out or continue with quizzes -->
         <div class="profile-actions">
             <a href="/logout"><button>Sign out</button></a>
             <p class="profilep">or</p>

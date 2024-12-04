@@ -10,6 +10,7 @@
     <div class="form-container">
         <h1>Create Account</h1>
         <form method="POST" action="/registered">
+            <!-- Text input for first name with a placeholder and 'required' to ensure it must be filled out, similarly for following code -->
             <label for="first">First Name:</label>
             <input type="text" id="first" name="first" placeholder="Enter your first name" required>
             
@@ -25,9 +26,11 @@
             <button type="submit">Register</button>
         </form>
         <p>OR</p>
+        <!-- Conditional rendering for showing the login button -->
         <% if (!isLoggedIn) { %>
             <a href="/login"><button class="secondary-button">Sign in to your account</button></a>
         <% } else { %>
+            <!-- If the user is logged in, show a disabled login button -->
             <button class="secondary-button" disabled>Sign in to your account</button>
         <% } %>
     </div>
