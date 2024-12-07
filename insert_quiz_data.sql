@@ -29,8 +29,8 @@ INSERT INTO questions (quiz_id, question, options, answer) VALUES
 (3, 'What is 7 * 6?', '["42", "44", "46", "48"]', 0),
 (3, 'What is 9 * 8?', '["72", "74", "76", "78"]', 0),
 (3, 'What is 12 * 12?', '["120", "122", "144", "164"]', 2),
-(3, 'What is 6 * 7?', '["38", "42", "45", "48"]', 1),
-(3, 'What is 8 * 9?', '["72", "76", "80", "84"]', 0),
+(3, 'What is 6 * 8?', '["38", "42", "45", "48"]', 3),
+(3, 'What is 4 * 9?', '["32", "36", "40", "44"]', 1),
 (3, 'What is 5 * 15?', '["50", "60", "70", "75"]', 3);
 
 -- division
@@ -64,26 +64,26 @@ INSERT INTO questions (quiz_id, question, options, answer) VALUES
 (6, 'How many days are in 2 weeks?', '["7", "10", "14", "20"]', 2),
 (6, 'What is the next minute after 59 minutes?', '["1 minute", "60 minutes", "60 seconds", "1 hour"]', 3),
 (6, 'How many weeks are in a year?', '["52", "53", "54", "56"]', 0),
-(6, 'What is the total number of hours in 3 weeks?', '["336", "300", "350", "400"]', 0);
+(6, 'What is the total number of hours in 1 weeks?', '["256", "186", "178", "200"]', 1);
 
 -- algebra quiz level 1
 INSERT INTO questions (quiz_id, question, options, answer) VALUES
 (7, 'What is x if 2x = 10?', '["2", "3", "5", "7"]', 2),
-(7, 'What is x if x + 5 = 10?', '["3", "4", "5", "6"]', 1),
-(7, 'What is the value of x in 3x - 4 = 11?', '["4", "5", "6", "7"]', 2),
+(7, 'What is x if x + 5 = 10?', '["3", "4", "5", "6"]', 2),
+(7, 'What is the value of x in 3x - 4 = 11?', '["4", "5", "6", "7"]', 1),
 (7, 'Solve for x: 5x + 2 = 17', '["3", "4", "5", "6"]', 0),
-(7, 'What is the value of x in 2x + 3 = 11?', '["3", "4", "5", "6"]', 0),
-(7, 'What is the solution to 4x + 8 = 24?', '["4", "5", "6", "7"]', 2),
+(7, 'What is the value of x in 2x + 3 = 11?', '["3", "4", "5", "6"]', 1),
+(7, 'What is the solution to 4x + 8 = 24?', '["4", "5", "6", "7"]', 0),
 (7, 'If x + y = 10 and x = 4, what is y?', '["4", "5", "6", "7"]', 2),
 (7, 'Solve for x: 6x = 36', '["5", "6", "7", "8"]', 1);
 
 -- algebra quiz level 2
 INSERT INTO questions (quiz_id, question, options, answer) VALUES
-(8, 'What is the value of x in 5x + 3 = 23?', '["3", "4s", "5", "6"]', 2),
-(8, 'Solve for x: 2x - 5 = 13', '["8", "9", "7", "6"]', 3),
-(8, 'What is the solution to 3x + 4 = 19?', '["4", "5", "6", "7"]', 2),
+(8, 'What is the value of x in 5x + 3 = 23?', '["3", "4", "5", "6"]', 1),
+(8, 'Solve for x: 2x - 5 = 13', '["8", "9", "7", "6"]', 1),
+(8, 'What is the solution to 3x + 4 = 19?', '["4", "5", "6", "7"]',1),
 (8, 'Solve for x: 4x - 7 = 9', '["4", "5", "3", "2"]', 0),
 (8, 'If 3x + 5 = 17, what is x?', '["3", "4", "5", "6"]', 1),
 (8, 'Solve for x: 2x + 6 = 18', '["5", "6", "7", "8"]', 1),
-(8, 'What is x if 4x + 5 = 21?', '["4", "5", "6", "7"]', 2),
-(8, 'Solve for x: 2(x + 3) = 16', '["5", "6", "4", "7"]', 2);
+(8, 'What is x if 4x + 5 = 21?', '["4", "5", "6", "7"]', 0),
+(8, 'Solve for x: 2(x + 3) = 16', '["5", "6", "4", "7"]', 0);
